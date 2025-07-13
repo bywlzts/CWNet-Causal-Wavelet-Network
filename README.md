@@ -13,10 +13,14 @@ conda activate cwnet
 
 
 ## Train
-```python train.py -opt ./options/train/huawei.yml```
+```
+python train.py -opt ./options/train/huawei.yml
+```
 
 ## Test
-```python test.py -opt ./options/test/huawei.yml```
+```
+python test.py -opt ./options/test/huawei.yml
+```
 
 ## Pre-trained Models and Outputs
 ✨ Coming soon.

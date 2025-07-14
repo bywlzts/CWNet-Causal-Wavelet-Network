@@ -23,4 +23,4 @@ python test.py -opt ./options/test/huawei.yml
 ```
 
 ## Pre-trained Models and Outputs
-✨ Coming soon.
+✨ [Here](https://drive.google.com/drive/folders/1Bcom7bANqh1_m2rNgEuG7C_JAAAF1bEh?usp=sharing).

@@ -11,7 +11,8 @@ conda activate cwnet
 ```
 ## CWNet
 
-![Over-all-Architecture]()
+![Over-all-Architecture](<img width="1975" height="707" alt="image" src="https://github.com/user-attachments/assets/f6cd8349-e561-48b9-858b-505e99d0f74a" />
+)
 
 ## Train
 ```

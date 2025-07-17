@@ -51,17 +51,17 @@ dataroot_GT:  your image path
 
 dataroot_LQ:  your image path
 
-### Train
+### 4. Train
 ```
 python train.py -opt ./options/train/huawei.yml
 ```
 
-### Test
+### 5. Test
 ```
 python test.py -opt ./options/test/huawei.yml
 ```
 
-### Pre-trained Models and Outputs
+### 6. Pre-trained Models and Outputs
 ✨ [Google Drive](https://drive.google.com/drive/folders/1Bcom7bANqh1_m2rNgEuG7C_JAAAF1bEh?usp=sharing).
 
 

@@ -53,12 +53,12 @@ dataroot_LQ:  your image path
 
 ### 4. Train
 ```
-python train.py -opt ./options/train/huawei.yml
+python train.py -opt ./options/train/LSRW-Huawei.yml
 ```
 
 ### 5. Test
 ```
-python test.py -opt ./options/test/huawei.yml
+python test.py -opt ./options/test/LSRW-Huawei.yml
 ```
 
 ### 6. Pre-trained Models and Outputs

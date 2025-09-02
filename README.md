@@ -1,9 +1,20 @@
 # [ICCV 25] CWNet: Causal Wavelet Network for Low-Light Image Enhancement :bulb: [Paper](https://arxiv.org/abs/2507.10689) 
 
-#### Tongshun Zhang, Pingping Liu, Yubing Lu, Mengen Cai, Zijian Zhang, Zhe Zhang, Qiuzhan Zhou
-#### College of Computer Science and Technology, Jilin University
-#### Key Laboratory of Symbolic Computation and Knowledge Engineering of Ministry of Education
-#### College of Communication Engineering, Jilin University
+Tongshun Zhang, Pingping Liu, Yubing Lu, Mengen Cai, Zijian Zhang, Zhe Zhang, Qiuzhan Zhou
+College of Computer Science and Technology, Jilin University
+Key Laboratory of Symbolic Computation and Knowledge Engineering of Ministry of Education
+College of Communication Engineering, Jilin University
+
+## 🔥 News
+
+We have updated our results based on the **LOL-v2-Real [[Google Drive]](https://drive.google.com/drive/folders/1Bcom7bANqh1_m2rNgEuG7C_JAAAF1bEh?usp=sharing)** training set and evaluated on the Real test set:
+
+| Dataset | SSIM | PSNR | LPIPS |
+|---------|------|------|-------|
+| LOL-v2-Real (Updated) | 0.8604 | 21.65 | 0.0651 |
+| Based on LOL-v1 (Previous/Paper) | 0.9005 | 27.39 | 0.0383 |
+
+The previous results reported in our paper for LOL-v2-Real were based on the LOL-v1 dataset, which we refer to as "Based_v1".
 
 ## 1. Abstract
 Traditional Low-Light Image Enhancement (LLIE) methods primarily focus on uniform brightness adjustment, often neglecting instance-level semantic information and the inherent characteristics of different features. To address these limitations, we propose CWNet (Causal Wavelet Network), a novel architecture that leverages wavelet transforms for causal reasoning. Specifically, our approach comprises two key components: 1) Inspired by the concept of intervention in causality, we adopt a causal reasoning perspective to reveal the underlying causal relationships in low-light enhancement. From a global perspective, we employ a metric learning strategy to ensure causal embeddings adhere to causal principles, separating them from non-causal confounding factors while focusing on the invariance of causal factors. At the local level, we introduce an instance-level CLIP semantic loss to precisely maintain causal factor consistency. 2) Based on our causal analysis, we present a wavelet transform-based backbone network that  effectively  optimizes the recovery of frequency information, ensuring precise enhancement tailored to the specific attributes of wavelet transforms. Extensive experiments demonstrate that CWNet significantly outperforms current state-of-the-art methods across multiple datasets, showcasing its robust performance across diverse scenes.

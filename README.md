@@ -7,7 +7,7 @@
 
 ## 🔥 News
 
-We have updated our results based on the **LOL-v2-Real [[Google Drive]](https://drive.google.com/drive/folders/1Bcom7bANqh1_m2rNgEuG7C_JAAAF1bEh?usp=sharing)** training set and evaluated on the Real test set:
+- [09/2025] We have updated our results based on the **LOL-v2-Real [[Google Drive]](https://drive.google.com/drive/folders/1Bcom7bANqh1_m2rNgEuG7C_JAAAF1bEh?usp=sharing)** training set and evaluated on the Real test set:
 
 | Dataset | SSIM | PSNR | LPIPS |
 |---------|------|------|-------|

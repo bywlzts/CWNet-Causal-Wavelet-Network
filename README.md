@@ -1,9 +1,9 @@
 # [ICCV 25] CWNet: Causal Wavelet Network for Low-Light Image Enhancement :bulb: [Paper](https://arxiv.org/abs/2507.10689) 
 
-Tongshun Zhang, Pingping Liu, Yubing Lu, Mengen Cai, Zijian Zhang, Zhe Zhang, Qiuzhan Zhou
-College of Computer Science and Technology, Jilin University
-Key Laboratory of Symbolic Computation and Knowledge Engineering of Ministry of Education
-College of Communication Engineering, Jilin University
+- *Tongshun Zhang, Pingping Liu, Yubing Lu, Mengen Cai, Zijian Zhang, Zhe Zhang, Qiuzhan Zhou*
+- *College of Computer Science and Technology, Jilin University*
+- *Key Laboratory of Symbolic Computation and Knowledge Engineering of Ministry of Education*
+- *College of Communication Engineering, Jilin University*
 
 ## 🔥 News
 

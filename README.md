@@ -49,7 +49,7 @@ conda activate cwnet
 ```
 (1) First download the pre-trained model (DA-CLIP, Segmentation model) from [Google Drive](https://drive.google.com/drive/folders/1Bcom7bANqh1_m2rNgEuG7C_JAAAF1bEh?usp=sharing).
 
-(2) Place the [DA-CLIP](https://github.com/Algolzw/daclip-uir) pre-trained model daclip_ViT-B-32.pt in the models/archs/clip directory.
+(2) Download the pre-trained model [DA-CLIP](https://github.com/Algolzw/daclip-uir).
 
 (3) Download the pre-trained segmentation model hrnet_w48_pascal_context_cls59_480x480.pth, and configure line 21 of models/archs/segment/hrseg_model.py: pretrained_dict.
 

@@ -6,6 +6,7 @@ from torchvision.transforms import Resize
 #import models.archs.clip.open_clip
 from models.archs.clip.CLIP_model.clip import tokenize, load
 from torchvision.transforms import ToTensor
+from models.archs.clip import open_clip
 
 class CharbonnierLoss(nn.Module):
     """Charbonnier Loss (L1)"""
@@ -379,6 +380,57 @@ class CLIPLOSS(nn.Module):
         self.text = tokenize(["high light image", "low light image"]).to("cuda" if torch.cuda.is_available() else "cpu")
         self.real_T = torch.Tensor([1., 0.]).to("cuda" if torch.cuda.is_available() else "cpu")
         self.CLIP, self.t = load("ViT-B/32", device='cuda')
+        self.criterion = torch.nn.CrossEntropyLoss()
+
+    def forward(self, seg_pred, input_1, input_2, type='CLIP', device='cuda'):
+        N, C, H, W = seg_pred.shape
+        seg_pred_cls = seg_pred.reshape(N, C, -1).argmax(dim=1)  # (N, H*W)
+        input_1 = input_1.reshape(N, 3, -1)  # (N, 3, H*W)
+        input_2 = input_2.reshape(N, 3, -1)  # (N, 3, H*W)
+
+        image_list = []
+
+        for n in range(N):
+            cls = seg_pred_cls[n]
+            img2 = input_2[n]
+            for c in range(C):
+                cls_index = torch.nonzero(cls == c).squeeze()
+
+                if cls_index.numel() == 0:
+                    continue
+
+                segmented_part = input_1[n][:, cls_index]
+                combined_image = img2.clone()
+
+                combined_image[:, cls_index] = segmented_part
+                combined_image = combined_image.permute(1, 0)
+                combined_image = combined_image.reshape(3, H, W)
+                image_list.append(combined_image)
+
+        if type == 'CLIP':
+            output_clip = torch.stack([self.torch_resize(img) for img in image_list]).to(self.device)
+            output_clip = output_clip.permute(0, 2, 3, 1)
+            output_clip = output_clip.permute(0, 3, 1, 2)
+
+            target = torch.tensor([0] * len(image_list)).to(self.device)
+
+            with torch.no_grad(), torch.cuda.amp.autocast():
+                logits_per_image, logits_per_text = self.CLIP(output_clip, self.text)
+                loss_CLIP = self.criterion(logits_per_image, target)
+                return loss_CLIP
+
+
+class DACLIPLOSS(nn.Module):
+    def __init__(self):
+        super(DACLIPLOSS, self).__init__()
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.checkpoint = 'DA-CLIP-PATH'
+        daclip, preprocess = open_clip.create_model_from_pretrained('daclip_ViT-B-32', pretrained=self.checkpoint,
+                                                                    device=self.device)
+        self.text = tokenize(["high light image", "low light image"]).to("cuda" if torch.cuda.is_available() else "cpu")
+        self.real_T = torch.Tensor([1., 0.]).to("cuda" if torch.cuda.is_available() else "cpu")
+        self.CLIP = daclip
+        self.torch_resize = preprocess
         self.criterion = torch.nn.CrossEntropyLoss()
 
     def forward(self, seg_pred, input_1, input_2, type='CLIP', device='cuda'):

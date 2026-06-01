@@ -1,4 +1,4 @@
-# [ICCV 25] CWNet: Causal Wavelet Network for Low-Light Image Enhancement :bulb: [Paper](https://arxiv.org/abs/2507.10689) 
+# [ICCV 25] CWNet: Causal Wavelet Network for Low-Light Image Enhancement [[Paper]](https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_CWNet_Causal_Wavelet_Network_for_Low-Light_Image_Enhancement_ICCV_2025_paper.html) 
 
 - *Tongshun Zhang, Pingping Liu, Yubing Lu, Mengen Cai, Zijian Zhang, Zhe Zhang, Qiuzhan Zhou*
 - *College of Computer Science and Technology, Jilin University*
@@ -80,13 +80,11 @@ python test.py -opt ./options/test/LSRW-Huawei.yml
 If you find the project useful, please cite:  
 
 ```bibtex  
-@misc{zhang2025cwnetcausalwaveletnetwork,
-      title={CWNet: Causal Wavelet Network for Low-Light Image Enhancement}, 
-      author={Tongshun Zhang and Pingping Liu and Yubing Lu and Mengen Cai and Zijian Zhang and Zhe Zhang and Qiuzhan Zhou},
-      year={2025},
-      eprint={2507.10689},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2507.10689}, 
+@inproceedings{zhang2025cwnet,
+  title={Cwnet: Causal wavelet network for low-light image enhancement},
+  author={Zhang, Tongshun and Liu, Pingping and Lu, Yubing and Cai, Mengen and Zhang, Zijian and Zhang, Zhe and Zhou, Qiuzhan},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={8789--8799},
+  year={2025}
 }
 
